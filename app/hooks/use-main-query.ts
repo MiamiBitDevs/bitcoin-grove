@@ -50,6 +50,9 @@ const useMainQuery = (): useMainQueryOutput => {
   const btcWallet = data?.me?.defaultAccount?.wallets?.find(
     (wallet) => wallet?.__typename === "BTCWallet",
   )
+  const usdWallet = data?.me?.defaultAccount?.wallets?.find(
+    (wallet) => wallet?.__typename === "USDWallet",
+  )
   if (hasToken && !btcWallet && !loading) {
     // User is logged in but no wallet was returned.  We need a BTC wallet for the app to function.
     throw new Error(
@@ -57,8 +60,11 @@ const useMainQuery = (): useMainQueryOutput => {
     )
   }
   const btcWalletBalance = btcWallet?.balance
+  const usdWalletBalance = usdWallet?.balance
   const btcWalletId = btcWallet?.id
-  const transactionsEdges = btcWallet?.transactions?.edges
+  const usdWalletId = usdWallet?.id
+  const btcTransactionsEdges = btcWallet?.transactions?.edges
+  const usdTransactionsEdges = usdWallet?.transactions?.edges
   const me = data?.me || {}
   const myPubKey = data?.globals?.nodesIds?.[0] ?? ""
   const username = data?.me?.username
@@ -68,8 +74,11 @@ const useMainQuery = (): useMainQueryOutput => {
   return {
     userPreferredLanguage,
     btcWalletBalance,
+    usdWalletBalance,
     btcWalletId,
-    transactionsEdges,
+    usdWalletId,
+    btcTransactionsEdges,
+    usdTransactionsEdges,
     me,
     myPubKey,
     username,

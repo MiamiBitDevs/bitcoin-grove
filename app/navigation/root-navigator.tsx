@@ -117,8 +117,6 @@ PushNotification.configure({
 const styles = EStyleSheet.create({
   bottomNavigatorStyle: {
     height: "10%",
-    // height: '60rem'
-    // height: 100
   },
 })
 
@@ -501,8 +499,8 @@ export const PrimaryNavigator: NavigatorType = () => {
       initialRouteName="MoveMoney"
       screenOptions={{
         tabBarActiveTintColor:
-          tokenNetwork === "mainnet" ? palette.lightBlue : palette.orange,
-        tabBarInactiveTintColor: palette.midGrey,
+          tokenNetwork === "mainnet" ? palette.galoyBlue : palette.orange,
+        tabBarInactiveTintColor: palette.coolGrey,
         tabBarStyle: styles.bottomNavigatorStyle,
         tabBarLabelStyle: { paddingBottom: 6 },
         tabBarHideOnKeyboard: true,
