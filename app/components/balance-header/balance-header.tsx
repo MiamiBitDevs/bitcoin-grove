@@ -84,7 +84,7 @@ const Loader = () => (
 )
 
 export const BalanceHeader: React.FC<BalanceHeaderProps> = ({
-  showSecondaryCurrency = true,
+  showSecondaryCurrency = false,
   loading = false,
   style,
 }: BalanceHeaderProps) => {
@@ -101,10 +101,10 @@ export const BalanceHeader: React.FC<BalanceHeaderProps> = ({
 }
 
 export const BalanceHeaderDisplay: React.FC<BalanceHeaderProps> = ({
-  showSecondaryCurrency = true,
+  showSecondaryCurrency = false,
 }: BalanceHeaderProps) => {
   const client = useApolloClient()
-  const { satBalance, usdBalance } = useWalletBalance()
+  const { btcWalletBalance, btcWalletValueInUsd, usdWalletBalance } = useWalletBalance()
   const hideBalance = useHideBalance()
   const hiddenBalanceToolTip = useHiddenBalanceToolTip()
   const isFocused = useIsFocused()
@@ -167,7 +167,7 @@ export const BalanceHeaderDisplay: React.FC<BalanceHeaderProps> = ({
   }
 
   const defaultBalanceHeader = () => {
-    const amountOtherCurrency = satBalance
+    const amountOtherCurrency = btcWalletBalance
     const subHeader = showSecondaryCurrency && (
       <TextCurrency
         amount={amountOtherCurrency}
@@ -187,7 +187,11 @@ export const BalanceHeaderDisplay: React.FC<BalanceHeaderProps> = ({
               }
             }}
           >
-            <TextCurrency amount={usdBalance} currency={currency} style={styles.text} />
+            <TextCurrency
+              amount={usdWalletBalance / 100 + btcWalletValueInUsd}
+              currency={currency}
+              style={styles.text}
+            />
           </TouchableHighlight>
         </View>
         {subHeader}
