@@ -584,7 +584,7 @@
     "confirmPayment": "Confirmar y pagar",
     "confirmPayment?": "¿Desea confirmar este pago?",
     "destinationLabel": "Para:",
-    "feeLabel": "Tarifa de red:",
+    "feeLabel": "Tarifa de red",
     "memoLabel": "Nota:",
     "paymentFinal": "Recuerde que los pagos son definitivos y una vez realizados son irreversibles.",
     "stalePrice": "El precio de bitcoin está desactualizado, se actualizó por última vez hace {{timePeriod}}. Por favor reinicie la aplicación antes de realizar el pago.",
@@ -604,7 +604,10 @@
     "note": "Nota ",
     "payFromUSD": "Pago desde $USD",
     "success": "El pago se ha enviado correctamente.",
-    "title": "Enviar Bitcoin"
+    "title": "Enviar Bitcoin",
+    "DestinationIsRequired": "El destino es obligatorio",
+    "destination": "Destino",
+    "amountIsRequired": "Se requiere cantidad"
   },
   "SettingsScreen": {
     "activated": "Activada",
@@ -729,7 +732,8 @@
     "username": "Nombre de usuario",
     "usernameRequired": "El nombre de usuario es requerido",
     "yes": "Sí",
-    "No": "No"
+    "No": "No",
+    "from": "Desde"
   },
   "errors": {
     "generic": "Hubo un error inesperado.\nPor favor intente más tarde",

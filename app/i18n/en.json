@@ -544,7 +544,7 @@
     "confirmPayment": "Confirm payment",
     "confirmPayment?": "Do you want to confirm this payment?",
     "destinationLabel": "To:",
-    "feeLabel": "Fee:",
+    "feeLabel": "Fee",
     "memoLabel": "Note:",
     "paymentFinal": "Payments are final.",
     "stalePrice": "Your bitcoin price is old and was last updated {{timePeriod}} ago. Please restart the app before making a payment.",
@@ -558,14 +558,17 @@
     "cost": "Cost",
     "fee": "network fee",
     "feeCalculationUnsuccessful": "Calculation unsuccessful ⚠️",
-    "input": "username or invoice",
+    "input": "Username, Lightning or BTC Address",
     "invalidUsername": "Invalid username",
     "noAmount": "This invoice doesn't have an amount, so you need to manually specify how much money you want to send",
     "notConfirmed": "Payment has been sent\nbut is not confirmed yet\n\nYou can check the status\nof the payment in Transactions",
     "note": "optional note",
     "success": "Payment has been sent successfully",
     "title": "Send Bitcoin",
-    "usernameNotFound": "A user matching the entered username could not be found."
+    "usernameNotFound": "A user matching the entered username could not be found.",
+    "DestinationIsRequired": "Destination is required",
+    "destination": "Destination",
+    "amountIsRequired": "Amount is required"
   },
   "SettingsScreen": {
     "activate": "Tap to activate",
@@ -695,7 +698,8 @@
     "username": "Username",
     "usernameRequired": "Username is required",
     "yes": "Yes",
-    "No": "No"
+    "No": "No",
+    "from": "From"
   },
   "errors": {
     "generic": "There was an error.\nPlease try again later.",
