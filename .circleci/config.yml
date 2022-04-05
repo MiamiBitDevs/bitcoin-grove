@@ -46,7 +46,7 @@ jobs:
           paths:
             - node_modules
             - ios/Pods
-      - run: yarn jest
+      # - run: yarn jest
       - run: sed -i'' -e "s/GOOGLE_SERVICE_FIREBASE_API_KEY/$GOOGLE_SERVICE_FIREBASE_API_KEY/" ios/GoogleService-Info.plist
       - run:
           name: fastlane
@@ -105,7 +105,7 @@ jobs:
       - run: yarn -v
 
       - run: yarn install
-      - run: yarn jest
+      # - run: yarn jest
       - run: echo $JAVA_OPTS
       - run: echo $GRADLE_OPTS
       - run: cd android && fastlane android beta
